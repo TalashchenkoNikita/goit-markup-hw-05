@@ -524,8 +524,8 @@ a {
     align-items: center;
     /* justify-content: center;
     visibility: hidden;
-    opacity: 0; */
-    pointer-events: none;  
+    opacity: 0;
+    pointer-events: none;  */ 
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
         visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -550,7 +550,6 @@ a {
     border-radius: 4px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 72px 24px 24px 24px;
-    text-align: center;
 }
 
 .backdrop:not(.is-open) .modal {
@@ -600,17 +599,16 @@ a {
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    text-align: center;
 }
 
 .modal-form-input {
     display: flex;
     flex-direction: column;
-    gap: 4px;
     width: 360px;
     height: 58px;
     color: #434455;
     margin-bottom: 8px;
-    
 }
 
 .modal-input-label {
@@ -626,8 +624,6 @@ a {
     position: relative;
     display: flex;
     align-items: center;
-    width: 360px;
-    padding: 8px 16px;
 }
 
 .modal-input {
@@ -659,7 +655,7 @@ a {
 }
 
 
-.modal-input:focus .modal-icon svg{
+.modal-input:focus + .modal-icon {
     fill: #4D5AE5;          
 }
 
@@ -741,14 +737,13 @@ a {
   line-height: 1.17;
   letter-spacing: 0.04em;
   cursor: pointer;
-  position: relative;
 }
 
 .checkbox-privacy {
   position: absolute;
   opacity: 0;
   pointer-events: none;
-}
+} 
 
 .checkmark {
   width: 16px;
@@ -763,12 +758,16 @@ a {
   margin-right: 8px;
 }
 
-.checkbox-privacy:checked + .checkmark {
+.checkmark-icon {
+    fill: transparent;
+}
+
+.checkbox-privacy:checked + .checkbox-label .checkmark {
   background-color: #404BBF;
   border: 1px solid #404BBF;
 }
 
-.custom-checkbox input:checked + .checkmark .checkmark-icon{
+.checkbox-privacy:checked + .checkmark .checkmark-icon{
   fill: #F4F4FD;
 }
 
