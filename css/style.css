@@ -739,11 +739,18 @@ a {
   cursor: pointer;
 }
 
-.checkbox-privacy {
+.visually-hidden {
   position: absolute;
-  opacity: 0;
-  pointer-events: none;
-} 
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 .checkmark {
   width: 16px;
@@ -759,15 +766,12 @@ a {
 }
 
 .checkmark-icon {
-    fill: transparent;
+    fill: #ffffff;
 }
 
 .checkbox-privacy:checked + .checkbox-label .checkmark {
   background-color: #404BBF;
-  border: 1px solid #404BBF;
-}
-
-.checkbox-privacy:checked + .checkmark .checkmark-icon{
+  border: none; 
   fill: #F4F4FD;
 }
 
